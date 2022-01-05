@@ -4,7 +4,8 @@
   "description": "[Express.js](http://expressjs.com/) is a web application framework for Node.js. It is designed for building web applications and APIs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/mohammedmiah04/be-pets-and-owners-2/issues"
   },
-  "homepage": "https://github.com/mohammedmiah04/be-pets-and-owners-2#readme"
+  "homepage": "https://github.com/mohammedmiah04/be-pets-and-owners-2#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }

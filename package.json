@@ -1,0 +1,19 @@
+{
+  "name": "be-pets-and-owners",
+  "version": "1.0.0",
+  "description": "[Express.js](http://expressjs.com/) is a web application framework for Node.js. It is designed for building web applications and APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedmiah04/be-pets-and-owners-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammedmiah04/be-pets-and-owners-2/issues"
+  },
+  "homepage": "https://github.com/mohammedmiah04/be-pets-and-owners-2#readme"
+}

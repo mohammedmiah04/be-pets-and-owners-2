@@ -17,7 +17,6 @@ exports.fetchAllOwners = () => {
       const ownerPromises = array.map((owner) => {
         return fs.readFile(`./data/owners/${owner}`, "utf-8");
       });
-
       return Promise.all(ownerPromises);
     })
     .then((values) => {
@@ -30,26 +29,30 @@ exports.fetchAllOwners = () => {
 };
 
 exports.changeOwner = (id, name, age) => {
+  console.log(id);
   return fs
     .readFile(`./data/owners/${id}.json`, "utf-8")
     .then((data) => {
-      const owner = JSON.parse(data);
-      return owner;
+      const pOwner = JSON.parse(data);
+      console.log(pOwner, "this1");
+      return pOwner;
     })
     .then((owner) => {
       owner.age = age;
       owner.name = name;
-
       console.log(owner);
-      //   console.log(owner);
-      //   const parsedOwner = JSON.parse(owner);
-      //   return fs.writeFile(`./data/owners/${id}.json`, 'utf-8').then((fileContents) => {
-
-      //   })
-      // })
-      // .then((parsedOwner) => {
-      //   console.log(newOwner);
-      //   // return fs.writeFile()
-      // });
+      return owner;
+    })
+    .then((owner) => {
+      const ownerData = owner;
+      console.log(ownerData, "<-- this");
+      return fs
+        .writeFile(
+          `./data/owners/${id}.json`,
+          JSON.stringify(ownerData, null, 4)
+        )
+        .then((updatedOwner) => {
+          return;
+        });
     });
 };

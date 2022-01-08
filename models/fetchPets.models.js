@@ -1,6 +1,7 @@
-const fs = require("fs/promises");
+const fs = require("fs").promises;
 
 exports.fetchPetsByOwner = (id) => {
+  console.log(id);
   return fs
     .readdir("./data/pets", "utf-8")
     .then((fileContents) => {
@@ -17,6 +18,7 @@ exports.fetchPetsByOwner = (id) => {
       return parsedPets;
     })
     .then((parsed) => {
+      console.log(parsed);
       const ownersPets = parsed.filter((pet) => {
         return pet.owner === id;
       });

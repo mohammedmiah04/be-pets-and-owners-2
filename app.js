@@ -8,6 +8,7 @@ const {
   getAllOwners,
   patchOwner,
   postOwner,
+  deleteOwner,
 } = require("./controllers/owners.controllers");
 
 const { getOwnerPets } = require("./controllers/pets.controllers");
@@ -21,5 +22,7 @@ app.get("/api/owners/:id/pets", getOwnerPets);
 app.patch("/api/owners/:id", patchOwner);
 
 app.post("/api/owners", postOwner);
+
+app.delete("/api/owners/:id", deleteOwner);
 
 module.exports = { app };

@@ -4,6 +4,8 @@ const {
   changeOwner,
 } = require("../models/fetchOwners.models");
 
+const { deleteOwner } = require("../models/deleteOwner.model");
+
 const { makeOwner } = require("../models/postOwner.model");
 
 exports.getOwners = (req, res) => {
@@ -41,5 +43,13 @@ exports.postOwner = (req, res) => {
   const newOwner = req.body;
   makeOwner(newOwner).then(() => {
     return res.status(201).send("new owner created + file");
+  });
+};
+
+exports.deleteOwner = (req, res) => {
+  const { id } = req.params;
+  console.log("in controller of delete");
+  deleteOwner(id).then((deletionM) => {
+    res.status(204).send(deletionM);
   });
 };
